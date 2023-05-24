@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2023 at 02:29 AM
+-- Generation Time: May 24, 2023 at 03:31 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -62,7 +62,7 @@ CREATE TABLE `pembelian` (
 CREATE TABLE `produk` (
   `IDProduk` int(11) NOT NULL,
   `NamaProduk` varchar(255) DEFAULT NULL,
-  `Harga` decimal(10,2) DEFAULT NULL,
+  `Harga` varchar(20) DEFAULT NULL,
   `Gambar` varchar(255) DEFAULT NULL,
   `IDKategori` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -72,9 +72,11 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`IDProduk`, `NamaProduk`, `Harga`, `Gambar`, `IDKategori`) VALUES
-(0, 'BTS LYRICS INSIDE', '9000000.00', 'album1.png', 1),
-(1, 'BLACKPINK 2nd ALBUM ', '9000000.00', 'album2.png', 2),
-(2, 'OFFICIAL LIGHT STICK VER.3', '9000000.00', 'album3.png', 1);
+(2, '1st Mini Album THE SECOND STEP : CHAPTER ONE ', '$30.28', 'album7.png', 1),
+(6, 'BLACKPINK 2nd ALBUM ', '$27.96', 'album2.png', 2),
+(7, 'NewJeans OMG Weverse Albums', '$10.12', 'album5.png', 2),
+(8, 'JP 1st SINGLE BORDER : Hakanai 3 SET', '$55.55', 'album6.png', 1),
+(9, 'BTS LYRICS INSIDE', '$26.94', 'album1.png', 1);
 
 --
 -- Indexes for dumped tables
@@ -99,6 +101,28 @@ ALTER TABLE `pembelian`
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`IDProduk`),
   ADD KEY `IDKategori` (`IDKategori`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `IDKategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `pembelian`
+--
+ALTER TABLE `pembelian`
+  MODIFY `IDPembelian` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `produk`
+--
+ALTER TABLE `produk`
+  MODIFY `IDProduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
